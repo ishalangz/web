@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Form</title>
+<style>
+label {
+    width: 140px;
+    font-size: 20px;
+    display: inline-block;
+    text-align: right;
+}
+input {
+    padding: 6px;
+    width: 200px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid blue;
+}
+button {
+    width: 10%;
+    padding: 10px;
+    font-size: 15px;
+    background-color: lightyellow;
+	text-align:center;
+}
+h2 {
+    text-align: center;
+}
+</style>
+<script>
+function validation() {
+    var Name = document.getElementById("Name").value;
+    var Password = document.getElementById("Password").value;
+	var confirm=document.getElementById("confirm").value;
+    var Phone = document.getElementById("Phone").value;
+
+    if (Name == "") {
+        alert("Name cannot be blank");
+        return false;
+    } else if (!isNaN(Name)) {
+        alert("Name cannot have numbers");
+        return false;
+    } else if (Password == "") {
+        alert("Enter password");
+        return false;
+    } else if (Password.length < 8) {
+        alert("Password requires at least 8 characters!");
+        return false;
+    }else if(Password!=confirm){
+		alert("please enter matching password!");
+		return false;
+	}else if (Phone == "") {
+        alert("Phone number cannot be blank");
+        return false;
+    } else if (isNaN(Phone)) {
+        alert("Invalid phone number");
+        return false;
+    } else if (Phone.length != 10) {
+        alert("Enter a valid 10-digit number please!");
+        return false;
+    } else {
+        alert("Thank you for Registering");
+        return true;
+    }
+}
+</script>
+</head>
+<body>
+<h2>Form Validation</h2>
+<form style="width:900px;position:relative;left:500px;" onsubmit="return validation()">
+    <label>Name</label>
+    <input type="text" placeholder="Name" id="Name"><br><br>
+    <label>Password</label>
+    <input type="password" placeholder="Password" id="Password"><br><br>
+	<label>Confirm</label>
+	<input type="password" placeholder="Confirm Password" id="confirm"><br><br>
+    <label>Phone number</label>
+    <input type="text" placeholder="Phone Number" id="Phone"><br><br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
