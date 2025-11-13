@@ -1,0 +1,38 @@
+<html>
+<head><title>change in color</title>
+<style>
+	p{
+		text-align:center;
+	}
+	hey{
+		max-width:100%;
+		border:2px solid green;
+		border-radius:50%;
+		padding:5px;
+		height:auto;
+		}
+	</style>
+<script>
+
+
+	function hey()
+	{
+		document.getElementById("hey").src="heyy.jpeg";
+		document.getElementById("m1").innerHTML="hehe";
+		document.getElementById("m1").style.color="red";
+	}
+	
+	function hey2()
+	{
+		document.getElementById("hey").src="heyyy.jpeg";
+		document.getElementById("m1").innerHTML="AAAARRRGGGHH!";
+		document.getElementById("m1").style.color="red";
+	}
+	</script>
+	</head>
+	<body>
+	<center><img src="hey.jpg" id="hey" onmouseover="hey()" onmouseout="hey2()"></center>
+	<b><p id="m1"></p>
+	</b>
+	</body>
+	</html>
